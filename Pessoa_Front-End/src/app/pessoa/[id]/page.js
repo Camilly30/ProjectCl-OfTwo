@@ -2,25 +2,25 @@
 
 import { useRouter } from "next/navigation";
 
-export default async function Pessoa({ params }) {
+export default async function produto({ params }) {
     const router = useRouter();
     const id = { id: parseInt(params.id) }
 
     const idJson = JSON.stringify(id);
 
-    const req = await fetch("http://localhost:3003/pessoas", {
+    const req = await fetch("http://localhost:3003/produtos", {
         method: "POST",
         cache: "no-cache",
         headers: { 'content-type': 'application/json' },
         body: idJson
     })
-    const pessoa = await req.json();
+    const produto = await req.json();
 
 
     const remover = () => {
         console.log(idJson)
         try {
-            fetch("http://localhost:3003/pessoas", {
+            fetch("http://localhost:3003/produtos", {
                 method: "DELETE",
                 headers: { 'content-type': 'application/json' },
                 body: idJson
@@ -32,9 +32,12 @@ export default async function Pessoa({ params }) {
     }
     return (
         <div>
-            <p>{pessoa.nome}</p>
-            <p>{pessoa.idade}</p>
-            <p>{pessoa.uf}</p>
+            <p>{produto.titulo }</p>
+            <p>{produto.data_cadastro}</p>
+            <p>{produto.preco}</p>
+            <p>{produto.descricao}</p>
+            <p>{produto.imagem}</p>
+
             <button onClick={e => e.preventDefault(remover())}>REMOVER</button>
 
         </div>
