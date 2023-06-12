@@ -5,7 +5,7 @@ let connect = async function () {
     if (global.connection) {
       return Promise.resolve(global.connection);
     }
-
+//conectando ao banco de dados: nome do banco, usuario, senha,url e o nome do banco que vc criou
     const pool = new Pool({
       connectionString: 'postgres://postgres:postgres@localhost/littleproject'
     });
