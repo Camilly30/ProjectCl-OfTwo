@@ -37,7 +37,7 @@ class Produtos {
   static async update(id, data) {
     try {
       const connect = await db.connect();
-      const sql = "";
+      const sql = "UPDATE produtos Set titulo=$1, data_cadastro=$2, preco=$3, descricao=$4, imagem=$5 ;";
       const values = [data.titulo, data.data_cadastro, data.preco, data.descricao, data.imagem];
       return await connect.query(sql, values);
     } catch (error) {
@@ -49,7 +49,7 @@ class Produtos {
   static async delete(id) {
     try {
       const connect = await db.connect();
-      const sql = "DELETE FROM produtos WHERE id=$1";
+      const sql = "DELETE FROM produtos WHERE id=$1; RETURNING id, titulo, data_cadastro, preco, descricao, imagem;";
       return await connect.query(sql, [id]);
     } catch (error) {
       console.error('Erro em delete:', error);

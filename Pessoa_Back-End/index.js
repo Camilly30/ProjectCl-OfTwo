@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/produtos', async function(req, res){
+app.get('/produtos', async function(req, res){//recupera todos os produtos
   try {
     var produtos = await Produto.select();
     res.json(produtos.rows);
@@ -21,7 +21,7 @@ app.get('/produtos', async function(req, res){
   }
 });
 
-app.post('/produtos', async function(req, res){
+app.post('/produtos', async function(req, res){//is
   try {
     var produto = await Produto.selectOne(req.body.id);
     res.json(produto.rows[0]);
@@ -31,7 +31,7 @@ app.post('/produtos', async function(req, res){
   }
 });
 
-app.post('/produto', async function(req,res){
+app.post('/produto', async function(req,res){//inserir um produto
   try{
     var produto = req.body
     var produto = await Produto.insert(produto);
@@ -41,18 +41,28 @@ app.post('/produto', async function(req,res){
   }
 })
 
+app.put('/produtos',async function (req,res){
+  try{
+    var produto= await Produto.update(req.body.id, req.body);
+    res.json(produto.rows);
+  }catch (error){
+    console.error('Erro ao atualizar produto:', error);
+    res.status(500).json({ error: 'Ocorreu um erro ao atualizar produto' });
+  }
+}
+);
 app.delete('/produtos', async function(req, res){
   try {
     console.log(req.body.id)
     var produto = await Produto.delete(req.body.id);
     res.json(produto.rows);
   } catch (error) {
-    console.error('Erro ao atualizar produto:', error);
-    res.status(500).json({ error: 'Ocorreu um erro ao atualizar produto' });
+    console.error('Erro ao DELETAR produto:', error);
+    res.status(500).json({ error: 'Ocorreu um erro ao deletar produto' });
   }
 });
 
 
-app.listen(3003, function() {
-  console.log(`APP rodando locamente na porta ${3003}`)
+app.listen(3000, function() {
+  console.log(`APP rodando locamente na porta ${3000}`)
 });

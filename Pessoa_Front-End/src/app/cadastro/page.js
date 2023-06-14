@@ -21,11 +21,11 @@ export default function Cadastro() {
              descricao: descricao ,
              imagem:imagem  
         }
-        const pessoaJson = JSON.stringify(produto);
-        fetch("http://localhost:3003/produto", {
+        const produtoJSON = JSON.stringify(produto);
+        fetch("http://localhost:3001/produtos", {
             method: "POST",
             headers: { "content-Type": "application/json" },
-            body: pessoaJson
+            body: produtoJSON
         }).then(function(){ route.push("/")}).catch(()=> console.log("Não foi possível cadastrar!"))
     }
 
