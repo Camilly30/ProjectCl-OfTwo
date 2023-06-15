@@ -49,7 +49,7 @@ class Produtos {
   static async delete(id) {
     try {
       const connect = await db.connect();
-      const sql = "DELETE FROM produtos WHERE id=$1; RETURNING id, titulo, data_cadastro, preco, descricao, imagem;";
+      const sql = "DELETE FROM produtos WHERE id=$1";
       return await connect.query(sql, [id]);
     } catch (error) {
       console.error('Erro em delete:', error);

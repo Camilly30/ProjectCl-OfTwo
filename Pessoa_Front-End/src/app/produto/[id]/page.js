@@ -8,7 +8,7 @@ export default async function produto({ params }) {
 
     const idJson = JSON.stringify(id);
 
-    const req = await fetch("http://localhost:3001/produtos", {
+    const req = await fetch("http://localhost:3001/produto", {
         method: "POST",
         cache: "no-cache",
         headers: { 'content-type': 'application/json' },
@@ -36,7 +36,7 @@ export default async function produto({ params }) {
             <p>{produto.data_cadastro}</p>
             <p>{produto.preco}</p>
             <p>{produto.descricao}</p>
-            <p>{produto.imagem}</p>
+            <img class='h-auto max-w-lg rounded-lg' src={produto.imagem}></img>
 
             <button onClick={e => e.preventDefault(remover())}>REMOVER</button>
 

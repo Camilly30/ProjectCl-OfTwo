@@ -3,9 +3,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 500px;
   background-color: black;
-  color: beige;
-
+ 
  }
+ .main form {
+    max-width: 98%;
+    background-color: #000000;
+    border-radius: 30px;
+    padding: 50px 100px;
+    color: antiquewhite  ;
+    border: 2px solid rgb(0, 17, 248);
+    
+}
+.main input{
+  background-color: #404040;
+  border-radius: 10px;
+  color: #000000;
+  padding: 15px 90px;
+  border-color:rgb(0, 37, 248);
+}
+
  
