@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   height: 500px;
-  background-color: black;
+  background: linear-gradient(to right, rgb(29, 136, 207), rgb(143, 25, 25));
  
  }
  .main form {
@@ -19,9 +19,8 @@
 .main input{
   background-color: #404040;
   border-radius: 10px;
-  color: #000000;
+  color: #c3c2c2;
   padding: 15px 90px;
   border-color:rgb(0, 37, 248);
+  
 }
-
- 

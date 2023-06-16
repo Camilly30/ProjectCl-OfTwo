@@ -48,6 +48,8 @@ export default function Cadastro() {
                     type="number"
                     placeholder='Preço'
                     nome="preco"
+                    min="100"
+                    step=".01"
                     onChange={e => setPreco(e.target.value)}
                 /><br/>
                 <input
@@ -62,8 +64,8 @@ export default function Cadastro() {
                     nome="imagem"
                     onChange={e => setImagem(e.target.value)}
                 /><br/>
-                <button type='submit'>Cadastrar</button>
-                <div>
+                <button class="text-white py-2 px-4 rounded-md text-center w-40  hover:bg-blue-600 border-solid border-2 border-sky-700 "type='submit'>Cadastrar</button>
+                <div class="text-white py-2 px-4 rounded-md text-center w-40  hover:bg-blue-600 border-solid border-2 border-sky-700 ">
                     <a href='/'>Voltar</a>
                 </div>
             </form>
