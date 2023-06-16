@@ -31,17 +31,17 @@ export default async function produto({ params }) {
         }
     }
     return (
-        <div className='flex flex-col m-16 flex-1 gap-6 '>
-            <p>{produto.titulo }</p>
-            <p>{produto.data_cadastro}</p>
-            <p>{produto.preco}</p>
+       
+        <div className='flex flex-col m-16 flex-1 gap-6'>
+            <p className="text-2xl">{produto.titulo }</p>
             <p>{produto.descricao}</p>
+            <p>{produto.preco}</p>
             <p><img class='h-auto w-60 rounded-lg border-4 border-sky-700' src={produto.imagem}></img></p>
-
-            <button class=" text-white py-2 px-4 rounded-md text-center w-40 hover:bg-blue-600 border-solid border-2 border-sky-700 "onClick={e => e.preventDefault(remover())}>REMOVER</button>
+            <p>{produto.data_cadastro}</p>
+            <button class=" text-white py-2 px-4 rounded-md text-center w-40 hover:bg-red-600 border-solid border-2 border-sky-700 " onClick={e => e.preventDefault(remover())}>REMOVER</button>
             <div><a class=" text-white py-2 px-4 rounded-md text-center w-40 hover:bg-blue-600 border-solid border-2 border-sky-700 " href='/'>Voltar</a></div>
 
         </div>
-
+      
     )
 }
