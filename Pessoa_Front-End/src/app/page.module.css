@@ -3,19 +3,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 500px;
-  background-color:black
- 
+  height: 600px;
+  background-image: url("https://wallpapercave.com/wp/wp3128072.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
  }
  .main form {
     max-width: 98%;
-    background-color: #000000;
     border-radius: 30px;
     padding: 50px 100px;
     color: antiquewhite  ;
     border: 2px solid rgb(0, 17, 248);
-    
-    
+    background-color: black;
 }
 .main input{
   background-color: #404040;

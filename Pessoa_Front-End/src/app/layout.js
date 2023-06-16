@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
       <body>
         <h1 className="text-6xl self-center m-16 text-blue-400 "> Only Sabers - Loja de Sabres de Luz </h1>
         {children}
-        <footer className='bg-gradient-to-r p-16 from-blue-500 to-red-500 main_footer  text-black  '>
+        <footer className='bg-zinc-950 p-16 text-zinc-50 '>
     
     <div class="content">
 
