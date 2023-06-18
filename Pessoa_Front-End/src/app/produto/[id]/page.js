@@ -30,6 +30,15 @@ export default async function produto({ params }) {
             alert("Ocorreu um erro" + error)
         }
     }
+    function confirmardelete(){
+
+        confirm('Tem certeza de que deseja deletar este produto?');
+        if(confirm === true)
+        {alert('Produto deletado com sucesso!')
+       }else{
+           {alert('Produto será mantido')}
+        }
+       }
     return (
        
         <div className='flex flex-col m-16 flex-1 gap-6'>
@@ -38,7 +47,7 @@ export default async function produto({ params }) {
             <p>{produto.preco}</p>
             <p><img class='h-auto w-60 rounded-lg border-4 border-sky-700' src={produto.imagem}></img></p>
             <p>{produto.data_cadastro}</p>
-            <button class=" text-white py-2 px-4 rounded-md text-center w-40 hover:bg-red-600 border-solid border-2 border-sky-700 " onClick={e => e.preventDefault(remover())}>REMOVER</button>
+            <button class=" text-white py-2 px-4 rounded-md text-center w-40 hover:bg-red-600 border-solid border-2 border-sky-700 " onClick={e => e.preventDefault(remover(),confirmardelete())}>REMOVER</button>
             <div><a class=" text-white py-2 px-4 rounded-md text-center w-40 hover:bg-blue-600 border-solid border-2 border-sky-700 " href='/'>Voltar</a></div>
 
         </div>
