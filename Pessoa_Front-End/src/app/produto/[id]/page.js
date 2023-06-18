@@ -1,5 +1,5 @@
 'use client'
-
+import Link from 'next/link';
 import { useRouter } from "next/navigation";
 
 export default async function produto({ params }) {
@@ -30,25 +30,25 @@ export default async function produto({ params }) {
             alert("Ocorreu um erro" + error)
         }
     }
-    function confirmardelete(){
-
-        confirm('Tem certeza de que deseja deletar este produto?');
-        if(confirm === true)
-        {alert('Produto deletado com sucesso!')
-       }else{
-           {alert('Produto será mantido')}
+    function confirmardelete() {
+        var confirmacao = confirm('Tem certeza de que deseja deletar este produto?');
+        
+        if (confirmacao) {
+          alert('Produto deletado com sucesso!');
+        } else {
+          alert('Produto será mantido');
         }
-       }
+      }
     return (
        
-        <div className='flex flex-col m-16 flex-1 gap-6'>
-            <p className="text-2xl">{produto.titulo }</p>
-            <p>{produto.descricao}</p>
-            <p>{produto.preco}</p>
-            <p><img class='h-auto w-60 rounded-lg border-4 border-sky-700' src={produto.imagem}></img></p>
+        <div className=' items-center justify-center font-bold flex flex-col m-0 flex-1 gap-4 bg-[url("https://cdn.wallpapersafari.com/45/25/lgtpda.jpg")] bg-no-repeat bg-cover  '>
+            <p className="text-4xl m-12 ">{produto.titulo }</p>
+            <p className='text-2xl'>{produto.descricao}</p>
+            <p className='text-2xl'>{produto.preco}</p>
+            <p><img class='h-auto max-w-4xl rounded-lg border-4 border-sky-700' src={produto.imagem}></img></p>
             <p>{produto.data_cadastro}</p>
             <button class=" text-white py-2 px-4 rounded-md text-center w-40 hover:bg-red-600 border-solid border-2 border-sky-700 " onClick={e => e.preventDefault(remover(),confirmardelete())}>REMOVER</button>
-            <div><a class=" text-white py-2 px-4 rounded-md text-center w-40 hover:bg-blue-600 border-solid border-2 border-sky-700 " href='/'>Voltar</a></div>
+            <Link class=" text-white py-2 px-4 rounded-md text-center w-40 hover:bg-blue-600 border-solid border-2 border-sky-700 m-2" href='/'>Voltar</Link>
 
         </div>
       

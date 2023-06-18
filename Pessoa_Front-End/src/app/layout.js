@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
       <body>
       <a href="/" ><h1 className="text-6xl self-center m-16 text-blue-400 "> Only Sabers - Loja de Sabres de Luz </h1></a> 
         {children}
-        <footer className='bg-zinc-950 p-16 text-zinc-50 '>
+        <footer className='bg-blue-950 p-16 text-zinc-50 '>
     
     <div class="content">
 
