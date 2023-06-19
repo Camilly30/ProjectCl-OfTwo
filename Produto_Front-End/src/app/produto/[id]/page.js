@@ -3,14 +3,14 @@ import Link from 'next/link';
 import { useRouter } from "next/navigation";
 
 export default async function produto({ params }) {
-    const router = useRouter();
-    const id = { id: parseInt(params.id) }
+    const router = useRouter();//rota
+    const id = { id: parseInt(params.id) } //representa o parâmetro de ID passado na rota.
 
     const idJson = JSON.stringify(id);
 
-    const req = await fetch("http://localhost:3001/produto", {
+    const req = await fetch("http://localhost:3001/produto", {//Essa linha faz uma solicitação assíncrona para a URL "http://localhost:3001/produto" para obter os dados da API. A função fetch é usada para fazer a requisição HTTP.
         method: "POST",
-        cache: "no-cache",
+        cache: "no-cache",//Page não será salva a resposta  em cache.
         headers: { 'content-type': 'application/json' },
         body: idJson
     })
@@ -30,7 +30,7 @@ export default async function produto({ params }) {
             alert("Ocorreu um erro" + error)
         }
     }
-    function confirmardelete() {
+    function confirmardelete() {//funcao para confirmação de deletar produto
         var confirmacao = confirm('Tem certeza de que deseja deletar este produto?');
         
         if (confirmacao) {

@@ -3,7 +3,7 @@ import { useState } from 'react'
 import styles from '../page.module.css'
 import { useRouter } from 'next/navigation'
 
-export default function Cadastro() {
+export default function Cadastro() {//declara estados
     const route = useRouter();
     const [titulo, setTitulo] = useState();
     const [data_cadastro, setData_cadastro] = useState();
@@ -11,7 +11,7 @@ export default function Cadastro() {
     const [descricao,setDescricao] = useState();
     const [imagem,setImagem] = useState();
 
-    const cadastrar = (e) => {
+    const cadastrar = (e) => {//prevemir o padrao do evento
         e.preventDefault()
         
         const produto = {
@@ -21,15 +21,15 @@ export default function Cadastro() {
              descricao: descricao ,
              imagem:imagem  
         }
-        const produtoJSON = JSON.stringify(produto);
+        const produtoJSON = JSON.stringify(produto);//informa que produto será cadastrado
         fetch("http://localhost:3001/produtos", {
             method: "POST",
             headers: { "content-Type": "application/json" },
             body: produtoJSON
-        }).then(function(){ route.push("/")}).catch(()=> console.log("Não foi possível cadastrar!"))
+        }).then(function(){ route.push("/")}).catch(()=> console.log("Não foi possível cadastrar!"))//caso não cadastrar redoreciona para a pg inicial
     }
 
-    return (
+    return (//retorno ao formulario
         <div className={styles.main}>
             <form  onSubmit={cadastrar}>
                 <label className='text-4xl text-white '>Cadastro de Produto</label><br/>

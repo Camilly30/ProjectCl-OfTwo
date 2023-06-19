@@ -15,9 +15,7 @@ export default function RootLayout({ children }) {
       <a href="/" ><h1 className="text-6xl self-center m-16 text-blue-400 "> Only Sabers - Loja de Sabres de Luz </h1></a> 
         {children}
         <footer className='bg-blue-950 p-16 text-zinc-50 my-6'>
-    
     <div class="content">
-
         <div class="colfooter">
             <h3 class="titleFooter text-2xl font-bold"> Menu</h3>
             <ul>

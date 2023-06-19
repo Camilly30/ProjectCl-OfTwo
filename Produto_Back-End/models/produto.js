@@ -1,7 +1,7 @@
 const db = require("../db");
 
 class Produtos {
-  static async select() {
+  static async select() {//metodo assíncrono  para selecionar produto
     try {
       const connect = await db.connect();
       const sql = "SELECT * FROM produtos"
@@ -11,7 +11,7 @@ class Produtos {
       throw error;
     }
   }
-  static async selectOne(id) {
+  static async selectOne(id) {//metodo assíncrono  para selecionar um específico produto
     try {
       const connect = await db.connect();
       const sql = "SELECT * FROM produtos WHERE id=$1";
@@ -22,7 +22,7 @@ class Produtos {
     }
   }
 
-  static async insert(data) {
+  static async insert(data) {//metodo assíncrono  para inserir um novo produto
     try {
       const connect = await db.connect();
       const sql = "INSERT INTO produtos(titulo, data_cadastro, preco, descricao, imagem) VALUES ($1, $2, $3,$4, $5) RETURNING titulo, data_cadastro, preco, descricao, imagem";
@@ -34,7 +34,7 @@ class Produtos {
     }
   }
 
-  static async update(id, data) {
+  static async update(id, data) {//metodo assíncrono para atualizar os atributos um específico produto
     try {
       const connect = await db.connect();
       const sql = "UPDATE produtos Set titulo=$1, data_cadastro=$2, preco=$3, descricao=$4, imagem=$5 ;";
@@ -46,7 +46,7 @@ class Produtos {
     }
   }
 
-  static async delete(id) {
+  static async delete(id) {//metodo assíncrono para deletar um específico produto
     try {
       const connect = await db.connect();
       const sql = "DELETE FROM produtos WHERE id=$1";

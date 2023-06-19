@@ -21,7 +21,7 @@ app.get('/produtos', async function(req, res){//recupera todos os produtos
   }
 });
 
-app.post('/produto', async function(req, res){//is
+app.post('/produto', async function(req, res){//rota para mostrar um produto específico
   try {
     var produto = await Produto.selectOne(req.body.id);
     res.json(produto.rows[0]);
@@ -42,7 +42,7 @@ app.post('/produtos', async function(req,res){//inserir um produto
   }
 })
 
-app.put('/produtos',async function (req,res){
+app.put('/produtos',async function (req,res){//atualizar produto
   try{
     var produto= await Produto.update(req.body.id);
     res.json(produto.rows);
@@ -52,7 +52,7 @@ app.put('/produtos',async function (req,res){
   }
 }
 );
-app.delete('/produtos', async function(req, res){
+app.delete('/produtos', async function(req, res){//deletar produto
   try {
     console.log(req.body.id)
     var produto = await Produto.delete(req.body.id);

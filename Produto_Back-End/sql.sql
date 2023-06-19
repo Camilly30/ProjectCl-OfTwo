@@ -1,5 +1,5 @@
 Create table produtos (
-id primary key not  null,
+id SERIAL primary key,
 titulo text not  null,
 data_cadastro date not  null, 
 preco money not  null,
