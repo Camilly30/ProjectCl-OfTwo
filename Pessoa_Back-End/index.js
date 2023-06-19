@@ -44,7 +44,7 @@ app.post('/produtos', async function(req,res){//inserir um produto
 
 app.put('/produtos',async function (req,res){
   try{
-    var produto= await Produto.update(req.body.id, req.body);
+    var produto= await Produto.update(req.body.id);
     res.json(produto.rows);
   }catch (error){
     console.error('Erro ao atualizar produto:', error);

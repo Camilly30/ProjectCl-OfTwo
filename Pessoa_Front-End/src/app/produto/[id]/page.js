@@ -45,11 +45,13 @@ export default async function produto({ params }) {
             <p className="text-4xl m-12 ">{produto.titulo }</p>
             <p className='text-2xl'>{produto.descricao}</p>
             <p className='text-2xl'>{produto.preco}</p>
-            <p><img class='h-auto max-w-4xl rounded-lg border-4 border-sky-700' src={produto.imagem}></img></p>
+            <p><img class='h-auto max-w-xl rounded-lg border-4 border-sky-700 transition duration-300 ease-in-out hover:scale-110' src={produto.imagem}></img></p>
             <p>{produto.data_cadastro}</p>
-            <button class=" text-white py-2 px-4 rounded-md text-center w-40 hover:bg-red-600 border-solid border-2 border-sky-700 " onClick={e => e.preventDefault(remover(),confirmardelete())}>REMOVER</button>
-            <Link class=" text-white py-2 px-4 rounded-md text-center w-40 hover:bg-blue-600 border-solid border-2 border-sky-700 m-2" href='/'>Voltar</Link>
-
+            <div class='m-5'>
+            <button class=" text-white py-2 px-4 rounded-md text-center w-40 hover:bg-red-600 border-solid border-4 border-sky-700 " onClick={e => e.preventDefault(remover(),confirmardelete())}>Remover</button>
+            <Link class=" text-white py-2 px-4 rounded-md text-center w-40 hover:bg-yellow-600 border-solid border-4 m-4 border-sky-700 " href={`/atualizar/${produto.id}`} className='alterar'> Alterar</Link>
+            <Link class=" text-white py-2 px-4 rounded-md text-center w-40 hover:bg-blue-600 border-solid border-4 border-sky-700 m-2" href='/'>Voltar</Link>
+            </div>
         </div>
       
     )
