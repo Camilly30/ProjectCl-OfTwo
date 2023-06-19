@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const Produto = require("./models/produto");
-const cors= require('cors');//delimitar que consegue acessar
+const cors= require('cors');//delimitar quem consegue acessar
 const app = express();
 app.use(cors());
 
@@ -44,7 +44,8 @@ app.post('/produtos', async function(req,res){//inserir um produto
 
 app.put('/produtos',async function (req,res){//atualizar produto
   try{
-    var produto= await Produto.update(req.body.id);
+    console.log(req.body.id)
+    var produto= await Produto.update(req.body);
     res.json(produto.rows);
   }catch (error){
     console.error('Erro ao atualizar produto:', error);

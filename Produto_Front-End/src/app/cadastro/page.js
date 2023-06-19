@@ -15,7 +15,7 @@ export default function Cadastro() {//declara estados
         e.preventDefault()
         
         const produto = {
-           titulo: titulo,
+           titulo:titulo,
             data_cadastro:data_cadastro ,
              preco:preco,
              descricao: descricao ,

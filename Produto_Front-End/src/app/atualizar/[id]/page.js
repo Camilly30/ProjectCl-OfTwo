@@ -4,7 +4,7 @@ import styles from '../../page.module.css'
 import { useRouter } from 'next/navigation'
 
 export default function Alterar({params}) {
-    const id = params.id ;
+    const id = parseInt(params.id);
     const route = useRouter();
    
 
@@ -22,7 +22,8 @@ export default function Alterar({params}) {
             data_cadastro:data_cadastro ,
              preco:preco,
              descricao: descricao ,
-             imagem:imagem  
+             imagem:imagem ,
+             id:id 
         }
         
         const produtoJSON = JSON.stringify(produto);

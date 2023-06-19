@@ -34,11 +34,11 @@ class Produtos {
     }
   }
 
-  static async update(id, data) {//metodo assíncrono para atualizar os atributos um específico produto
+  static async update(data) {//metodo assíncrono para atualizar os atributos um específico produto
     try {
       const connect = await db.connect();
-      const sql = "UPDATE produtos Set titulo=$1, data_cadastro=$2, preco=$3, descricao=$4, imagem=$5 ;";
-      const values = [data.titulo, data.data_cadastro, data.preco, data.descricao, data.imagem];
+      const sql = "UPDATE produtos Set titulo=$1, data_cadastro=$2, preco=$3, descricao=$4, imagem=$5 WHERE id=$6;";
+      const values = [data.titulo, data.data_cadastro, data.preco, data.descricao, data.imagem,data.id] ;
       return await connect.query(sql, values);
     } catch (error) {
       console.error('Erro em update:', error);
