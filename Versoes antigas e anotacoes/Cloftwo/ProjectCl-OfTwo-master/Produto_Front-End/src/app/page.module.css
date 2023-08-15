@@ -1,0 +1,28 @@
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+  background-image: url("https://wallpapercave.com/wp/wp3128072.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+ }
+ .main form {
+    max-width: 98%;
+    border-radius: 30px;
+    padding: 50px 100px;
+    color: antiquewhite  ;
+    border: 2px solid rgb(0, 17, 248);
+    background-color: black;
+}
+.main input{
+  background-color: #404040;
+  border-radius: 10px;
+  color: #c3c2c2;
+  padding: 15px 90px;
+  border-color:rgb(0, 37, 248);
+  width:100%;
+  margin:6px
+  
+}

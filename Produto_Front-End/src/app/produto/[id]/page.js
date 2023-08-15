@@ -1,8 +1,9 @@
 'use client'
 import Link from 'next/link';
 import { useRouter } from "next/navigation";
+import Image from 'next/image';
 
-export default async function produto({ params }) {
+export default async function useProduto({ params }) {
     const router = useRouter();//rota
     const id = { id: parseInt(params.id) } //representa o parâmetro de ID passado na rota.
 
@@ -45,7 +46,7 @@ export default async function produto({ params }) {
             <p className="text-4xl m-12 ">{produto.titulo }</p>
             <p className='text-2xl'>{produto.descricao}</p>
             <p className='text-2xl'>{produto.preco}</p>
-            <p><img class='h-auto max-w-xl rounded-lg border-4 border-sky-700 transition duration-300 ease-in-out hover:scale-110' src={produto.imagem}></img></p>
+            <p><Image class='h-auto max-w-xl rounded-lg border-4 border-sky-700 transition duration-300 ease-in-out hover:scale-110' src={produto.imagem} alt="nomedoalt"></Image></p>
             <p>{produto.data_cadastro}</p>
             <div class='m-5'>
             <button class=" text-white py-2 px-4 rounded-md text-center w-40 hover:bg-red-600 border-solid border-4 border-sky-700 " onClick={e => e.preventDefault(remover(),confirmardelete())}>Remover</button>

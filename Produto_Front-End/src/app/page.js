@@ -1,6 +1,6 @@
 "use client"
 import Link from 'next/link';
-
+import Image from 'next/image';
 
 export default async function Home() {
 
@@ -18,7 +18,7 @@ export default async function Home() {
             <p>{produtos.titulo }</p>
             <p>{produtos.descricao}</p>
           
-           <Link href={`/produto/${produtos.id}`} > <img class='h-auto w-72 m-3 rounded-lg border-4 border-sky-700  transition duration-300 ease-in-out hover:scale-110 hover:opacity-25' src={produtos.imagem}></img></Link>
+           <Link href={`/produto/${produtos.id}`} > <Image class='h-auto w-72 m-3 rounded-lg border-4 border-sky-700  transition duration-300 ease-in-out hover:scale-110 hover:opacity-25' src={produtos.imagem}alt="nomedoalt"></Image></Link>
            <Link class=" text-white py-2 px-4 rounded-md text-center w-40 hover:bg-blue-600 border-solid border-4 m-4 border-sky-700 " href={`/atualizar/${produtos.id}`} className='alterar'> Alterar</Link>
            <Link class=" text-white py-2 px-4 rounded-md text-center w-40 hover:bg-blue-600 border-solid border-4 m-4 border-sky-700 " href={`/produto/${produtos.id}`} className='vermias'>Ver mais</Link>
         </div>) )  }
@@ -30,7 +30,7 @@ export default async function Home() {
   )
 }
 
-/*apresentação de img 
+/*apresentação de Image 
   erro cadastro
   updete
   delete
